@@ -1,0 +1,16 @@
+name: Daily GitHub Visit
+
+on:
+  schedule:
+    - cron: "0 9 * * *"  # runs daily at 9 AM UTC (adjust time if needed)
+
+jobs:
+  visit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Visit GitHub Profile
+        run: |
+          echo "Visiting profile..."
+          curl -s https://github.com/manoj8043 > /dev/null
+          sleep 60
+          echo "Done!"
