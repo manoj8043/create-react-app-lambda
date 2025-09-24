@@ -1,10 +1,9 @@
-name: Daily GitHub Visit
+name: Multiple GitHub Visits
 
 on:
-  workflow_dispatch:    # 👈 allows manual trigger
+  workflow_dispatch:   # manual trigger
   schedule:
-    - cron: "0 9 * * *" # daily at 9 AM UTC
-
+    - cron: "0 */3 * * *"   # every 3 hours
 
 jobs:
   visit:
@@ -13,6 +12,6 @@ jobs:
       - name: Visit GitHub Profile
         run: |
           echo "Visiting profile..."
-          curl -s https://github.com/manoj8043 > /dev/null
-          sleep 60
+          curl -s https://github.com/YOUR_USERNAME > /dev/null
+          sleep 300   # stay for 5 minutes
           echo "Done!"
