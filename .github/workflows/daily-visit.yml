@@ -1,8 +1,10 @@
 name: Daily GitHub Visit
 
 on:
+  workflow_dispatch:    # 👈 allows manual trigger
   schedule:
-    - cron: "0 9 * * *"  # runs daily at 9 AM UTC (adjust time if needed)
+    - cron: "0 9 * * *" # daily at 9 AM UTC
+
 
 jobs:
   visit:
